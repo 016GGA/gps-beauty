@@ -379,53 +379,64 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;background:#060
 
 
 <style>
-/* ===== FUNDO FIXO DA GABI NO CELULAR =====
-   A foto fica travada atrás enquanto a página inteira rola.
-   No desktop nada muda. */
-@media (max-width:900px){
-  html,
-  body{
-    background-color:#08090d;
+/* ===== FUNDO FIXO DA GABI — SITE INTEIRO ===== */
+html {
+    background: #08090d;
+}
+
+body {
+    background-color: #08090d !important;
     background-image:
-      linear-gradient(rgba(8,9,13,.76),rgba(8,9,13,.88)),
-      url("gabi.png.jpeg");
-    background-repeat:no-repeat,no-repeat;
-    background-position:center center,center center;
-    background-size:cover,cover;
-    background-attachment:fixed,fixed;
-  }
+        linear-gradient(rgba(8, 9, 13, 0.76), rgba(8, 9, 13, 0.88)),
+        url("gabi.png.jpeg") !important;
+    background-repeat: no-repeat, no-repeat !important;
+    background-position: center center, center center !important;
+    background-size: cover, cover !important;
+    background-attachment: fixed, fixed !important;
+}
 
-  /* As seções ficam levemente transparentes para o fundo aparecer
-     sem prejudicar a leitura. */
-  .hero{
-    background:
-      linear-gradient(rgba(8,9,13,.80),rgba(8,9,13,.88)),
-      transparent !important;
-  }
+/* Deixa o conteúdo passar por cima sem esconder completamente o fundo */
+.hero,
+.services,
+.differentials,
+.contact,
+.cta,
+footer {
+    background-color: transparent !important;
+}
 
-  .services{
-    background:rgba(9,10,14,.86) !important;
-  }
+/* Mantém a seção Sobre com seu próprio visual e a foto normal */
+.about {
+    background: rgba(8, 9, 13, 0.82) !important;
+}
 
-  .differentials,
-  .contact,
-  .about{
-    background:rgba(8,9,13,.86) !important;
-  }
+/* Camada geral para manter a leitura bonita */
+main {
+    background: rgba(8, 9, 13, 0.18);
+}
 
-  .cta{
-    background:rgba(9,10,14,.88) !important;
-  }
+/* MOBILE: foto fixa e ocupando a tela inteira */
+@media (max-width: 900px) {
+    body {
+        background-position: center center, center center !important;
+        background-size: cover, cover !important;
+        background-attachment: fixed, fixed !important;
+    }
 
-  footer{
-    background:rgba(6,7,10,.92) !important;
-  }
+    .hero {
+        background: rgba(8, 9, 13, 0.42) !important;
+    }
 
-  /* Remove o fundo local do Sobre no mobile para não duplicar a foto.
-     A foto normal da Gabi dentro do Sobre continua aparecendo normalmente. */
-  .about::before{
-    display:none !important;
-  }
+    .services,
+    .differentials,
+    .contact,
+    .cta {
+        background: rgba(8, 9, 13, 0.55) !important;
+    }
+
+    .about {
+        background: rgba(8, 9, 13, 0.78) !important;
+    }
 }
 </style>
 
