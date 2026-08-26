@@ -1,480 +1,2291 @@
-@media (max-width: 650px) {
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    /* =========================
-       MOBILE GPS BEAUTY
-    ========================== */
+<head>
 
-    body {
-        overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
 
-    .container {
-        width: 90%;
-    }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    /* HERO */
+    <title>GPS Beauty Studio</title>
 
-    .hero {
-        min-height: 900px;
-        overflow: hidden;
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        background:
-            radial-gradient(
-                circle at 50% 35%,
-                rgba(118, 72, 53, 0.20),
-                transparent 40%
-            ),
-            linear-gradient(
-                180deg,
-                #070809 0%,
-                #090a0c 55%,
-                #0b0b0d 100%
-            );
-    }
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    /* =========================
-       HEADER MOBILE
-    ========================== */
+    <style>
 
-    header {
-        height: 72px;
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+        ===================================================== */
 
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        :root {
 
-        position: relative;
-        z-index: 20;
-    }
+            --black: #08090b;
 
-    .nav {
-        display: none;
-    }
+            --black-light: #101113;
 
-    .top-button {
-        font-size: 10px;
+            --gold: #c98972;
 
-        padding: 12px 18px;
+            --gold-light: #e7b29d;
 
-        border-radius: 30px;
+            --gold-dark: #9e5e4e;
 
-        background: rgba(8, 9, 11, 0.55);
+            --white: #f4efed;
 
-        backdrop-filter: blur(8px);
+            --gray: #c5c1c1;
 
-        white-space: nowrap;
-    }
+            --border: rgba(201, 137, 114, 0.38);
 
+        }
 
-    /* =========================
-       CONTEÚDO
-    ========================== */
 
-    .hero-content {
-        min-height: auto;
+        * {
 
-        display: block;
+            margin: 0;
 
-        padding-top: 30px;
+            padding: 0;
 
-        position: relative;
-        z-index: 10;
-    }
+            box-sizing: border-box;
 
-    .hero-left {
-        width: 100%;
+        }
 
-        padding: 0;
 
-        text-align: center;
-    }
+        html {
 
+            scroll-behavior: smooth;
 
-    /* =========================
-       LOGO
-    ========================== */
+        }
 
-    .hero-logo {
-        width: 300px;
-        max-width: 88%;
 
-        margin: 0 auto 20px;
+        body {
 
-        display: block;
-    }
+            background: var(--black);
 
+            color: var(--white);
 
-    /* =========================
-       FRASE
-    ========================== */
+            font-family: 'Montserrat', sans-serif;
 
-    .hero-title {
-        font-size: 31px;
+            overflow-x: hidden;
 
-        line-height: 1.05;
+        }
 
-        letter-spacing: 0.5px;
 
-        margin: 0 auto 18px;
+        a {
 
-        max-width: 360px;
-    }
+            color: inherit;
 
+            text-decoration: none;
 
-    .hero-description {
-        font-size: 12px;
+        }
 
-        line-height: 1.8;
 
-        max-width: 330px;
+        img {
 
-        margin: 0 auto 22px;
+            max-width: 100%;
 
-        color: #d0cccc;
-    }
+            display: block;
 
+        }
 
-    /* =========================
-       BOTÕES
-    ========================== */
 
-    .hero-buttons {
-        width: 100%;
+        .container {
 
-        display: flex;
+            width: min(1120px, 90%);
 
-        flex-direction: column;
+            margin: 0 auto;
 
-        align-items: center;
+        }
 
-        gap: 12px;
 
-        position: relative;
 
-        z-index: 15;
-    }
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
+        header {
 
-    .button-primary {
-        width: 100%;
-        max-width: 360px;
+            height: 82px;
 
-        justify-content: center;
+            display: flex;
 
-        text-align: center;
+            align-items: center;
 
-        padding: 17px 18px;
+            justify-content: space-between;
 
-        border-radius: 10px;
+            position: relative;
 
-        font-size: 12px;
-    }
+            z-index: 50;
 
+        }
 
-    .button-outline {
-        width: 100%;
-        max-width: 360px;
 
-        text-align: center;
+        .nav {
 
-        padding: 16px 18px;
+            display: flex;
 
-        border-radius: 10px;
+            align-items: center;
 
-        font-size: 12px;
-    }
+            gap: 45px;
 
+        }
 
-    /* =========================
-       FOTO DA GABI
-    ========================== */
 
-    .hero-image {
+        .nav a {
 
-        position: absolute;
+            color: #e5e1e1;
 
-        top: 315px;
-        left: 0;
+            font-size: 12px;
 
-        width: 100%;
-        height: 585px;
+            font-weight: 500;
 
-        display: flex;
+            letter-spacing: .4px;
 
-        justify-content: center;
-        align-items: flex-end;
+            padding-bottom: 8px;
 
-        z-index: 3;
+            border-bottom: 1px solid transparent;
 
-        opacity: 0.62;
+            transition: .3s;
 
-        pointer-events: none;
-    }
+        }
 
 
-    .hero-image::before {
+        .nav a:hover,
 
-        content: "";
+        .nav a.active {
 
-        position: absolute;
+            color: var(--gold-light);
 
-        inset: 0;
+            border-bottom-color: var(--gold);
 
-        background:
-            radial-gradient(
-                ellipse at center 40%,
-                rgba(150, 92, 67, 0.28),
-                transparent 50%
-            );
+        }
 
-        filter: blur(15px);
 
-        z-index: 1;
-    }
+        .top-button {
 
+            border: 1px solid var(--gold);
 
-    .hero-image::after {
+            border-radius: 30px;
 
-        content: "";
+            padding: 12px 21px;
 
-        position: absolute;
+            font-size: 11px;
 
-        inset: 0;
+            font-weight: 600;
 
-        background:
-            linear-gradient(
-                to bottom,
-                #090a0c 0%,
-                rgba(9,10,12,0.05) 20%,
-                rgba(9,10,12,0) 55%,
-                #090a0c 100%
-            );
+            transition: .3s;
 
-        z-index: 3;
-    }
+            background: rgba(0,0,0,.15);
 
+        }
 
-    .hero-image img {
 
-        width: 100%;
-        height: 100%;
+        .top-button:hover {
 
-        max-width: none;
+            background: var(--gold);
 
-        object-fit: contain;
+            transform: translateY(-2px);
 
-        object-position: center bottom;
+        }
 
-        position: relative;
 
-        z-index: 2;
 
-        opacity: 0.9;
+        /* =====================================================
+           HERO - DESKTOP
+        ===================================================== */
 
-        -webkit-mask-image:
-            linear-gradient(
-                to bottom,
-                transparent 0%,
-                black 10%,
-                black 82%,
-                transparent 100%
-            );
+        .hero {
 
-        mask-image:
-            linear-gradient(
-                to bottom,
-                transparent 0%,
-                black 10%,
-                black 82%,
-                transparent 100%
-            );
-    }
+            min-height: 690px;
 
+            position: relative;
 
-    /* =========================
-       LINHA
-    ========================== */
+            overflow: hidden;
 
-    .hero-bottom-line {
-        margin-top: 0;
-    }
+            background:
 
+                radial-gradient(
+                    circle at 78% 52%,
+                    rgba(137, 87, 64, .40),
+                    transparent 30%
+                ),
 
-    /* =========================
-       SERVIÇOS
-    ========================== */
+                radial-gradient(
+                    circle at 10% 60%,
+                    rgba(89, 51, 36, .20),
+                    transparent 32%
+                ),
 
-    .services {
-        padding: 35px 0 40px;
-    }
+                linear-gradient(
+                    90deg,
+                    #08090b 0%,
+                    #090a0c 50%,
+                    #111113 100%
+                );
 
-    .section-tag {
-        font-size: 11px;
+        }
 
-        letter-spacing: 1.5px;
 
-        margin-bottom: 8px;
-    }
+        .hero::before {
 
-    .section-title {
-        font-size: 29px;
+            content: "";
 
-        line-height: 1.05;
+            position: absolute;
 
-        margin-bottom: 25px;
-    }
+            inset: 0;
 
-    .services-grid {
-        grid-template-columns: 1fr;
+            background:
 
-        gap: 15px;
-    }
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.82) 0%,
+                    rgba(0,0,0,.18) 43%,
+                    transparent 72%
+                );
 
-    .service-card {
-        min-height: 290px;
+            z-index: 1;
 
-        padding: 25px 22px;
-    }
+            pointer-events: none;
 
+        }
 
-    /* =========================
-       DIFERENCIAIS
-    ========================== */
 
-    .differentials {
-        padding: 35px 0;
-    }
+        .hero-content {
 
-    .differentials-grid {
-        grid-template-columns: 1fr;
+            min-height: 608px;
 
-        gap: 0;
-    }
+            display: flex;
 
-    .differential {
+            align-items: center;
 
-        border-right: none;
+            position: relative;
 
-        border-bottom:
-            1px solid rgba(255,255,255,0.10);
+            z-index: 10;
 
-        padding: 22px 5px;
+        }
 
-        min-height: auto;
-    }
 
-    .differential:last-child {
-        border-bottom: none;
-    }
+        .hero-left {
 
+            width: 54%;
 
-    /* =========================
-       CTA
-    ========================== */
+            padding-bottom: 30px;
 
-    .cta-section {
-        padding: 15px 0 35px;
-    }
+        }
 
-    .cta-box {
 
-        min-height: auto;
+        /* =====================================================
+           LOGO
+        ===================================================== */
 
-        padding: 30px 22px;
+        .hero-logo {
 
-        flex-direction: column;
+            width: 440px;
 
-        align-items: center;
+            max-width: 100%;
 
-        text-align: center;
+            margin-bottom: 15px;
 
-        gap: 22px;
+        }
 
-        border-radius: 16px;
-    }
 
-    .cta-text small {
-        font-size: 10px;
-    }
 
-    .cta-text h2 {
-        font-size: 27px;
+        /* =====================================================
+           TÍTULO
+        ===================================================== */
 
-        line-height: 1.08;
+        .hero-title {
 
-        margin-top: 10px;
-    }
+            font-family: 'Cormorant Garamond', serif;
 
-    .cta-button {
+            font-size: 30px;
 
-        width: 100%;
+            line-height: 1.1;
 
-        padding: 19px 15px;
+            font-weight: 500;
 
-        text-align: center;
+            letter-spacing: 1px;
 
-        font-size: 12px;
+            color: var(--gold-light);
 
-        white-space: normal;
-    }
+            margin-bottom: 12px;
 
+        }
 
-    /* =========================
-       FOOTER
-    ========================== */
 
-    footer {
-        padding: 30px 0;
-    }
+        .hero-description {
 
-    .footer-grid {
-        grid-template-columns: 1fr;
+            max-width: 490px;
 
-        gap: 25px;
+            font-size: 14px;
 
-        text-align: center;
-    }
+            line-height: 1.85;
 
-    .footer-item {
+            color: #cbc6c6;
 
-        border-right: none;
+            margin-bottom: 25px;
 
-        border-bottom:
-            1px solid rgba(255,255,255,0.08);
+        }
 
-        padding: 0 0 22px;
 
-        min-height: auto;
-    }
 
-    .footer-item:first-child {
-        padding-left: 0;
-    }
+        /* =====================================================
+           BOTÕES
+        ===================================================== */
 
-    .footer-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
+        .hero-buttons {
 
-    .footer-logo {
-        font-size: 27px;
-    }
+            display: flex;
 
+            align-items: center;
 
-    /* =========================
-       WHATSAPP
-    ========================== */
+            gap: 16px;
 
-    .whatsapp-float {
+            flex-wrap: wrap;
 
-        width: 55px;
-        height: 55px;
+        }
 
-        right: 18px;
-        bottom: 18px;
 
-        font-size: 22px;
-    }
+        .button-primary {
 
-}
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 16px 25px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #c97968,
+                    #a45a4e
+                );
+
+            border-radius: 9px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+            box-shadow:
+                0 10px 30px rgba(156, 73, 59, .22);
+
+        }
+
+
+        .button-primary:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 35px rgba(156, 73, 59, .35);
+
+        }
+
+
+        .button-outline {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px 23px;
+
+            border: 1px solid rgba(201,137,114,.65);
+
+            border-radius: 9px;
+
+            color: var(--gold-light);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+
+        .button-outline:hover {
+
+            background: rgba(201,137,114,.10);
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        /* =====================================================
+           FOTO GABI - DESKTOP
+        ===================================================== */
+
+        .hero-image {
+
+            position: absolute;
+
+            right: 0;
+
+            bottom: 0;
+
+            width: 52%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            z-index: 5;
+
+            pointer-events: none;
+
+        }
+
+
+        .hero-image::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    circle at 52% 45%,
+                    rgba(169, 111, 82, .35),
+                    transparent 43%
+                );
+
+            filter: blur(20px);
+
+        }
+
+
+        .hero-image img {
+
+            position: relative;
+
+            z-index: 2;
+
+            height: 96%;
+
+            width: auto;
+
+            max-width: 100%;
+
+            object-fit: contain;
+
+            object-position: bottom center;
+
+            -webkit-mask-image:
+
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    black 16%,
+                    black 84%,
+                    transparent 100%
+                );
+
+            mask-image:
+
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    black 16%,
+                    black 84%,
+                    transparent 100%
+                );
+
+        }
+
+
+        .hero-bottom-line {
+
+            height: 1px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(201,137,114,.45),
+                    transparent
+                );
+
+        }
+
+
+
+        /* =====================================================
+           SERVIÇOS
+        ===================================================== */
+
+        .services {
+
+            padding: 30px 0 42px;
+
+        }
+
+
+        .section-tag {
+
+            text-align: center;
+
+            color: var(--gold-light);
+
+            font-size: 12px;
+
+            letter-spacing: 1.6px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 35px;
+
+            font-weight: 500;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .section-title span {
+
+            color: var(--gold);
+
+        }
+
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 10px;
+
+        }
+
+
+        .service-card {
+
+            min-height: 275px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 11px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(29,27,28,.95),
+                    rgba(12,13,15,.95)
+                );
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            transition: .35s;
+
+        }
+
+
+        .service-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(201,137,114,.7);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,.35);
+
+        }
+
+
+        .service-icon {
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 42px;
+
+            color: var(--gold-light);
+
+        }
+
+
+        .service-card h3 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 22px;
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            letter-spacing: .8px;
+
+            min-height: 50px;
+
+        }
+
+
+        .service-card p {
+
+            color: #c4c0c0;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+            margin: 14px 0 18px;
+
+        }
+
+
+        .service-button {
+
+            margin-top: auto;
+
+            border: 1px solid rgba(201,137,114,.65);
+
+            color: var(--gold-light);
+
+            border-radius: 30px;
+
+            padding: 9px 20px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+
+        .service-button:hover {
+
+            background: var(--gold);
+
+            color: white;
+
+        }
+
+
+
+        /* =====================================================
+           DIFERENCIAIS
+        ===================================================== */
+
+        .differentials {
+
+            padding: 25px 0 30px;
+
+        }
+
+
+        .differentials-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            margin-top: 20px;
+
+        }
+
+
+        .differential {
+
+            padding: 0 20px;
+
+            min-height: 130px;
+
+            border-right:
+                1px solid rgba(255,255,255,.12);
+
+        }
+
+
+        .differential:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .differential-icon {
+
+            color: var(--gold-light);
+
+            font-size: 38px;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .differential h4 {
+
+            color: #dfdada;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+            font-weight: 500;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .differential p {
+
+            color: #b8b3b3;
+
+            font-size: 10px;
+
+            line-height: 1.8;
+
+        }
+
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta-section {
+
+            padding: 12px 0 28px;
+
+        }
+
+
+        .cta-box {
+
+            min-height: 125px;
+
+            padding: 25px 45px;
+
+            border: 1px solid rgba(201,137,114,.7);
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #121214,
+                    #0d0e10
+                );
+
+        }
+
+
+        .cta-text small {
+
+            color: var(--gold-light);
+
+            font-size: 11px;
+
+            letter-spacing: 1.2px;
+
+        }
+
+
+        .cta-text h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 30px;
+
+            font-weight: 500;
+
+            line-height: 1.05;
+
+            margin-top: 7px;
+
+        }
+
+
+        .cta-button {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #c47766,
+                    #a65a4d
+                );
+
+            padding: 21px 50px;
+
+            border-radius: 12px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            transition: .3s;
+
+        }
+
+
+        .cta-button:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            border-top:
+                1px solid rgba(255,255,255,.08);
+
+            padding: 23px 0;
+
+            background: #090a0c;
+
+        }
+
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr 1fr 1fr .9fr;
+
+            align-items: center;
+
+        }
+
+
+        .footer-item {
+
+            min-height: 65px;
+
+            padding: 0 30px;
+
+            border-right:
+                1px solid rgba(255,255,255,.10);
+
+        }
+
+
+        .footer-item:first-child {
+
+            padding-left: 0;
+
+        }
+
+
+        .footer-item:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .footer-logo {
+
+            color: var(--gold-light);
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 28px;
+
+            letter-spacing: 7px;
+
+        }
+
+
+        .footer-logo span {
+
+            display: block;
+
+            text-align: center;
+
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 6px;
+
+        }
+
+
+        .footer-slogan {
+
+            color: #c99681;
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 13px;
+
+            margin-top: 7px;
+
+        }
+
+
+        .footer-title {
+
+            color: var(--gold-light);
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .footer-text {
+
+            color: #c5c0c0;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .copyright {
+
+            color: #aaa5a5;
+
+            font-size: 10px;
+
+            line-height: 1.8;
+
+        }
+
+
+
+        /* =====================================================
+           WHATSAPP FLUTUANTE
+        ===================================================== */
+
+        .whatsapp-float {
+
+            position: fixed;
+
+            right: 24px;
+
+            bottom: 24px;
+
+            width: 54px;
+
+            height: 54px;
+
+            border-radius: 50%;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #c87967,
+                    #9d5045
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 22px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,.5);
+
+            z-index: 100;
+
+            transition: .3s;
+
+        }
+
+
+        .whatsapp-float:hover {
+
+            transform: scale(1.08);
+
+        }
+
+
+
+        /* =====================================================
+           TABLET
+           651px até 1000px
+        ===================================================== */
+
+        @media (max-width: 1000px) and (min-width: 651px) {
+
+            .nav {
+
+                gap: 20px;
+
+            }
+
+
+            .hero-left {
+
+                width: 58%;
+
+            }
+
+
+            .hero-logo {
+
+                width: 390px;
+
+            }
+
+
+            .hero-image {
+
+                width: 48%;
+
+            }
+
+
+            .services-grid {
+
+                gap: 15px;
+
+            }
+
+
+            .differentials-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 30px;
+
+            }
+
+
+            .differential:nth-child(2) {
+
+                border-right: none;
+
+            }
+
+
+            .cta-box {
+
+                padding: 25px;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           CELULAR
+           Até 650px
+        ===================================================== */
+
+        @media (max-width: 650px) {
+
+
+            /* -------------------------
+               GERAL
+            ------------------------- */
+
+            .container {
+
+                width: 90%;
+
+            }
+
+
+            /* -------------------------
+               HERO MOBILE
+            ------------------------- */
+
+            .hero {
+
+                min-height: 920px;
+
+                background:
+
+                    radial-gradient(
+                        circle at 50% 30%,
+                        rgba(115,72,53,.20),
+                        transparent 40%
+                    ),
+
+                    linear-gradient(
+                        180deg,
+                        #070809,
+                        #0a0b0d
+                    );
+
+            }
+
+
+            .hero::before {
+
+                background:
+
+                    linear-gradient(
+                        180deg,
+                        rgba(0,0,0,.55),
+                        rgba(0,0,0,.08) 45%,
+                        rgba(0,0,0,.65)
+                    );
+
+            }
+
+
+            /* -------------------------
+               HEADER MOBILE
+            ------------------------- */
+
+            header {
+
+                height: 72px;
+
+                justify-content: flex-end;
+
+            }
+
+
+            .nav {
+
+                display: none;
+
+            }
+
+
+            .top-button {
+
+                padding: 11px 17px;
+
+                font-size: 10px;
+
+                background:
+                    rgba(5,5,6,.65);
+
+                backdrop-filter:
+                    blur(8px);
+
+            }
+
+
+            /* -------------------------
+               CONTEÚDO MOBILE
+            ------------------------- */
+
+            .hero-content {
+
+                min-height: auto;
+
+                display: block;
+
+                padding-top: 25px;
+
+            }
+
+
+            .hero-left {
+
+                width: 100%;
+
+                padding: 0;
+
+                text-align: center;
+
+                position: relative;
+
+                z-index: 15;
+
+            }
+
+
+            /* -------------------------
+               LOGO MOBILE
+            ------------------------- */
+
+            .hero-logo {
+
+                width: 310px;
+
+                max-width: 90%;
+
+                margin: 0 auto 22px;
+
+            }
+
+
+            /* -------------------------
+               TÍTULO MOBILE
+            ------------------------- */
+
+            .hero-title {
+
+                max-width: 360px;
+
+                margin: 0 auto 17px;
+
+                font-size: 30px;
+
+                line-height: 1.05;
+
+            }
+
+
+            .hero-description {
+
+                max-width: 340px;
+
+                margin: 0 auto 23px;
+
+                font-size: 12px;
+
+                line-height: 1.8;
+
+            }
+
+
+            /* -------------------------
+               BOTÕES MOBILE
+            ------------------------- */
+
+            .hero-buttons {
+
+                width: 100%;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 12px;
+
+            }
+
+
+            .button-primary,
+
+            .button-outline {
+
+                width: 100%;
+
+                max-width: 360px;
+
+                padding: 17px 15px;
+
+                text-align: center;
+
+            }
+
+
+            /* -------------------------
+               FOTO MOBILE
+            ------------------------- */
+
+            .hero-image {
+
+                top: 335px;
+
+                left: 0;
+
+                right: auto;
+
+                bottom: auto;
+
+                width: 100%;
+
+                height: 585px;
+
+                opacity: .55;
+
+                z-index: 3;
+
+            }
+
+
+            .hero-image::before {
+
+                background:
+
+                    radial-gradient(
+                        ellipse at center 40%,
+                        rgba(158,95,70,.30),
+                        transparent 52%
+                    );
+
+                filter: blur(18px);
+
+            }
+
+
+            .hero-image::after {
+
+                content: "";
+
+                position: absolute;
+
+                inset: 0;
+
+                z-index: 4;
+
+                background:
+
+                    linear-gradient(
+                        to bottom,
+                        #08090b 0%,
+                        transparent 18%,
+                        transparent 58%,
+                        #08090b 100%
+                    );
+
+            }
+
+
+            .hero-image img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: contain;
+
+                object-position: center bottom;
+
+                -webkit-mask-image:
+
+                    linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        black 12%,
+                        black 80%,
+                        transparent 100%
+                    );
+
+                mask-image:
+
+                    linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        black 12%,
+                        black 80%,
+                        transparent 100%
+                    );
+
+            }
+
+
+            /* -------------------------
+               SERVIÇOS MOBILE
+            ------------------------- */
+
+            .services {
+
+                padding: 38px 0 42px;
+
+            }
+
+
+            .section-tag {
+
+                font-size: 11px;
+
+            }
+
+
+            .section-title {
+
+                font-size: 29px;
+
+                line-height: 1.05;
+
+                margin-bottom: 25px;
+
+            }
+
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+
+            }
+
+
+            .service-card {
+
+                min-height: 285px;
+
+                padding: 25px 22px;
+
+            }
+
+
+            /* -------------------------
+               DIFERENCIAIS MOBILE
+            ------------------------- */
+
+            .differentials {
+
+                padding: 35px 0;
+
+            }
+
+
+            .differentials-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .differential {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid rgba(255,255,255,.10);
+
+                padding: 22px 5px;
+
+                min-height: auto;
+
+            }
+
+
+            .differential:last-child {
+
+                border-bottom: none;
+
+            }
+
+
+            /* -------------------------
+               CTA MOBILE
+            ------------------------- */
+
+            .cta-section {
+
+                padding: 15px 0 35px;
+
+            }
+
+
+            .cta-box {
+
+                min-height: auto;
+
+                padding: 30px 22px;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                text-align: center;
+
+                gap: 22px;
+
+            }
+
+
+            .cta-text h2 {
+
+                font-size: 27px;
+
+                line-height: 1.08;
+
+            }
+
+
+            .cta-button {
+
+                width: 100%;
+
+                padding: 19px 15px;
+
+                white-space: normal;
+
+                text-align: center;
+
+                font-size: 12px;
+
+            }
+
+
+            /* -------------------------
+               FOOTER MOBILE
+            ------------------------- */
+
+            footer {
+
+                padding: 30px 0;
+
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+                text-align: center;
+
+            }
+
+
+            .footer-item {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid rgba(255,255,255,.08);
+
+                padding: 0 0 22px;
+
+            }
+
+
+            .footer-item:first-child {
+
+                padding-left: 0;
+
+            }
+
+
+            .footer-item:last-child {
+
+                border-bottom: none;
+
+                padding-bottom: 0;
+
+            }
+
+
+            /* -------------------------
+               WHATSAPP MOBILE
+            ------------------------- */
+
+            .whatsapp-float {
+
+                width: 55px;
+
+                height: 55px;
+
+                right: 18px;
+
+                bottom: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+        class="hero"
+        id="inicio"
+    >
+
+        <div class="container">
+
+
+            <!-- HEADER -->
+
+            <header>
+
+                <nav class="nav">
+
+                    <a
+                        href="#inicio"
+                        class="active"
+                    >
+                        INÍCIO
+                    </a>
+
+                    <a href="#sobre">
+                        SOBRE
+                    </a>
+
+                    <a href="#servicos">
+                        SERVIÇOS
+                    </a>
+
+                    <a href="#diferenciais">
+                        DIFERENCIAIS
+                    </a>
+
+                    <a href="#contato">
+                        CONTATO
+                    </a>
+
+                </nav>
+
+
+                <a
+                    href="https://wa.me/5516996184437?text=Oi%20Gabi%2C%20queria%20agendar%20um%20hor%C3%A1rio!"
+                    target="_blank"
+                    class="top-button"
+                >
+                    ◉ AGENDAR AGORA
+                </a>
+
+            </header>
+
+
+
+            <!-- CONTEÚDO -->
+
+            <div class="hero-content">
+
+
+                <div class="hero-left">
+
+
+                    <!-- LOGO -->
+
+                    <img
+                        src="gps-logo.png.png"
+                        alt="GPS Beauty Studio"
+                        class="hero-logo"
+                    >
+
+
+                    <!-- TÍTULO -->
+
+                    <h1 class="hero-title">
+
+                        ✦ Seu Destino para um olhar Perfeito ✦
+
+                    </h1>
+
+
+                    <!-- DESCRIÇÃO -->
+
+                    <p class="hero-description">
+
+                        Realçamos a sua beleza com técnicas exclusivas
+                        <br>
+                        e um atendimento que valoriza você em cada detalhe.
+
+                    </p>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="hero-buttons">
+
+
+                        <a
+                            href="https://wa.me/5516996184437?text=Oi%20Gabi%2C%20queria%20agendar%20um%20hor%C3%A1rio!"
+                            target="_blank"
+                            class="button-primary"
+                        >
+
+                            ◉ AGENDAR NO WHATSAPP
+
+                        </a>
+
+
+                        <a
+                            href="#servicos"
+                            class="button-outline"
+                        >
+
+                            CONHEÇA OS SERVIÇOS ↓
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOTO DA GABI -->
+
+        <div class="hero-image">
+
+            <img
+                src="gabi.png.jpeg"
+                alt="Gabrielli - GPS Beauty Studio"
+            >
+
+        </div>
+
+
+    </section>
+
+
+    <div class="hero-bottom-line"></div>
+
+
+
+    <!-- =====================================================
+         SERVIÇOS
+    ===================================================== -->
+
+    <section
+        class="services"
+        id="servicos"
+    >
+
+        <div class="container">
+
+
+            <p class="section-tag">
+
+                NOSSOS SERVIÇOS
+
+            </p>
+
+
+            <h2 class="section-title">
+
+                BELEZA QUE REALÇA A SUA
+                <span>ESSÊNCIA</span>
+
+            </h2>
+
+
+            <div class="services-grid">
+
+
+                <!-- SERVIÇO 1 -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ◉
+                    </div>
+
+                    <h3>
+
+                        DESIGNER DE
+                        <br>
+                        SOBRANCELHAS
+
+                    </h3>
+
+                    <p>
+
+                        Modelagem personalizada que harmoniza
+                        com o seu rosto e realça a beleza
+                        natural com perfeição.
+
+                    </p>
+
+                    <a
+                        href="#contato"
+                        class="service-button"
+                    >
+
+                        SAIBA MAIS →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- SERVIÇO 2 -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ✎
+                    </div>
+
+                    <h3>
+
+                        MICROPIGMENTAÇÃO
+
+                    </h3>
+
+                    <p>
+
+                        Técnicas avançadas para sobrancelhas
+                        perfeitas todos os dias, com acabamento
+                        natural e elegante.
+
+                    </p>
+
+                    <a
+                        href="#contato"
+                        class="service-button"
+                    >
+
+                        SAIBA MAIS →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- SERVIÇO 3 -->
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ≋
+                    </div>
+
+                    <h3>
+
+                        EXTENSÃO
+                        <br>
+                        DE CÍLIOS
+
+                    </h3>
+
+                    <p>
+
+                        Alongamento que valoriza o seu olhar com
+                        leveza, volume e um resultado incrível.
+
+                    </p>
+
+                    <a
+                        href="#contato"
+                        class="service-button"
+                    >
+
+                        SAIBA MAIS →
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DIFERENCIAIS
+    ===================================================== -->
+
+    <section
+        class="differentials"
+        id="diferenciais"
+    >
+
+        <div class="container">
+
+
+            <p class="section-tag">
+
+                NOSSOS DIFERENCIAIS
+
+            </p>
+
+
+            <div class="differentials-grid">
+
+
+                <div class="differential">
+
+                    <div class="differential-icon">
+                        ◇
+                    </div>
+
+                    <h4>
+
+                        TÉCNICAS
+                        <br>
+                        ATUALIZADAS
+
+                    </h4>
+
+                    <p>
+
+                        Sempre as melhores
+                        <br>
+                        técnicas do mercado
+                        <br>
+                        para resultados
+                        <br>
+                        impecáveis.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="differential">
+
+                    <div class="differential-icon">
+                        ♡
+                    </div>
+
+                    <h4>
+
+                        ATENDIMENTO
+                        <br>
+                        PERSONALIZADO
+
+                    </h4>
+
+                    <p>
+
+                        Cada cliente é única.
+                        <br>
+                        Atendimento humanizado
+                        <br>
+                        e focado em você.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="differential">
+
+                    <div class="differential-icon">
+                        ♢
+                    </div>
+
+                    <h4>
+
+                        PRODUTOS DE
+                        <br>
+                        ALTA QUALIDADE
+
+                    </h4>
+
+                    <p>
+
+                        Utilizamos apenas
+                        <br>
+                        produtos premium
+                        <br>
+                        para cuidar de você.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="differential">
+
+                    <div class="differential-icon">
+                        ✦
+                    </div>
+
+                    <h4>
+
+                        HIGIENE E
+                        <br>
+                        SEGURANÇA
+
+                    </h4>
+
+                    <p>
+
+                        Ambiente seguro,
+                        <br>
+                        esterilizado e preparado
+                        <br>
+                        para o seu bem-estar.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ===================================================== -->
+
+    <section class="cta-section">
+
+        <div class="container">
+
+
+            <div class="cta-box">
+
+
+                <div class="cta-text">
+
+                    <small>
+
+                        PRONTA PARA REALÇAR A SUA BELEZA?
+
+                    </small>
+
+
+                    <h2>
+
+                        Agende seu horário e transforme
+                        <br>
+                        o seu olhar com quem entende!
+
+                    </h2>
+
+                </div>
+
+
+
+                <a
+                    href="https://wa.me/5516996184437?text=Oi%20Gabi%2C%20queria%20agendar%20um%20hor%C3%A1rio!"
+                    target="_blank"
+                    class="cta-button"
+                >
+
+                    ◉ AGENDAR NO WHATSAPP
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer
+        id="contato"
+    >
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div class="footer-item">
+
+
+                    <div class="footer-logo">
+
+                        GPS BEAUTY
+
+                        <span>
+                            STUDIO
+                        </span>
+
+                    </div>
+
+
+                    <div class="footer-slogan">
+
+                        ✦ Seu Destino para um olhar Perfeito ✦
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="footer-item">
+
+
+                    <div class="footer-title">
+
+                        SIGA NO INSTAGRAM
+
+                    </div>
+
+
+                    <div class="footer-text">
+
+                        ◎ @gpsbeautystudio
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="footer-item">
+
+
+                    <div class="footer-title">
+
+                        ATENDIMENTO
+
+                    </div>
+
+
+                    <div class="footer-text">
+
+                        ◉ (16) 99618-4437
+
+                        <br>
+
+                        ♦ Araraquara - SP
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="footer-item">
+
+
+                    <div class="copyright">
+
+                        © 2026 GPS Beauty Studio.
+
+                        <br>
+
+                        Todos os direitos reservados.
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         WHATSAPP FLUTUANTE
+    ===================================================== -->
+
+    <a
+        href="https://wa.me/5516996184437?text=Oi%20Gabi%2C%20queria%20agendar%20um%20hor%C3%A1rio!"
+        target="_blank"
+        class="whatsapp-float"
+        aria-label="Agendar pelo WhatsApp"
+    >
+
+        ◉
+
+    </a>
+
+
+</body>
+
+</html>
